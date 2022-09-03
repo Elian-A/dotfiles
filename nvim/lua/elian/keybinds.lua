@@ -7,45 +7,45 @@ end
 --map('n', '<leader>W', '<CMD>wall<CR>')
 
 -- Quit neovim
-map('n', '<leader>qq', '<CMD>q<CR>')
-map('n', '<leader>ww', '<CMD>wq<CR>')
+map('n', '<leader>qq', 'ZQ')
+map('n', '<leader>ww', 'ZZ')
 
--- Move to the next/previous buffer
-map('n', '<leader>p', '<CMD>bp<CR>')
-map('n', '<leader>n', '<CMD>bn<CR>')
+-- Buffer Movements
+map('n', '<leader>bp', '<CMD>bp<CR>')
+map('n', '<leader>bn', '<CMD>bn<CR>')
+map('n', '<leader>bd', '<CMD>bd!<CR>')
+map('n', "<leader>bl", '<CMD>b#<CR>')
 
--- Move to last buffer
---map('n', "''", '<CMD>b#<CR>')
-
--- tab splits
-map('n', '<leader>v', '<CMD>vsplit<CR>')
-map('n', '<leader>h', '<CMD>split<CR>')
+-- New Splits
+map('n', '<leader>nv', '<CMD>vnew<CR>')
+map('n', '<leader>nh', '<CMD>new split<CR>')
 
 -- Move between splits
-map('n', '<A-h>', ":wincmd h<CR>")
-map('n', '<A-j>', ':wincmd j<CR>')
-map('n', '<A-k>', ':wincmd k<CR>')
-map('n', '<A-l>', ":wincmd l<CR>")
+map('n', '<leader>h', ":wincmd h<CR>")
+map('n', '<leader>j', ':wincmd j<CR>')
+map('n', '<leader>k', ':wincmd k<CR>')
+map('n', '<leader>l', ":wincmd l<CR>")
 
--- resize splits
-map('n', '<leader>pvr', ":vertical resize +1 h<CR>")
-map('n', '<leader>nvr', ":vertical resize -1 h<CR>")
-map('n', '<leader>phr', ":resize +1 h<CR>")
-map('n', '<leader>nhr', ":resize -1 h<CR>")
+-- Resize splits
+map('n', '<leader>y', ":vertical resize +2 h<CR>")
+map('n', '<leader>o', ":vertical resize -2 h<CR>")
+map('n', '<leader>u', ":resize +2 h<CR>")
+map('n', '<leader>i', ":resize -2 h<CR>")
 
 -- Move splits
-map('n', '<leader>mh', "<C-W>H")
-map('n', '<leader>mj', "<C-W>J")
-map('n', '<leader>mk', "<C-W>K")
-map('n', '<leader>ml', "<C-W>L")
+map('n', '<leader><leader>h', "<C-W>H")
+map('n', '<leader><leader>j', "<C-W>J")
+map('n', '<leader><leader>k', "<C-W>K")
+map('n', '<leader><leader>l', "<C-W>L")
 
+map('i', 'hh', "<esc>")
 
 -- Move line up and down in NORMAL and VISUAL modes
 -- Reference: https://vim.fandom.com/wiki/Moving_lines_up_or_down
-map('n', '<C-j>', '<CMD>move .+1<CR>')
-map('n', '<C-k>', '<CMD>move .-2<CR>')
-map('x', '<C-j>', ":move '>+1<CR>gv=gv")
-map('x', '<C-k>', ":move '<-2<CR>gv=gv") --What's x?
+map('n', '<A-j>', '<CMD>move .+1<CR>')
+map('n', '<A-k>', '<CMD>move .-2<CR>')
+map('x', '<A-j>', ":move '>+1<CR>gv=gv")
+map('x', '<A-k>', ":move '<-2<CR>gv=gv") --What's x? all?
 
 -- Use operator pending mode to visually select the whole buffer
 -- e.g. dA = delete buffer ALL, yA = copy whole buffer ALL
