@@ -38,6 +38,7 @@ map('n', '<leader><leader>j', "<C-W>J")
 map('n', '<leader><leader>k', "<C-W>K")
 map('n', '<leader><leader>l', "<C-W>L")
 
+-- Exit
 map('i', 'hh', "<esc>")
 
 -- Move line up and down in NORMAL and VISUAL modes
@@ -57,4 +58,5 @@ map('n', '<leader>ff', '<CMD>Telescope find_files<cr>')
 map('n', '<leader>fg', '<CMD>Telescope live_grep<cr>')
 map('n', '<leader>fv', '<CMD>Telescope buffers<cr>')
 map('n', '<leader>fh', '<CMD>Telescope help_tags<cr>')
+map('n', '<leader>fd', '<CMD>Telescope diagnostics<cr>')
 
