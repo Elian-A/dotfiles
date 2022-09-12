@@ -1,5 +1,5 @@
 local function map(m, k, v)
-    vim.keymap.set(m, k, v, { silent = true })
+  vim.keymap.set(m, k, v, { silent = true })
 end
 
 -- Quickly save the current buffer or all buffers
@@ -9,6 +9,9 @@ end
 -- Quit neovim
 map('n', '<leader>qq', 'ZQ')
 map('n', '<leader>ww', 'ZZ')
+
+-- Save file like vscode
+map('n', '<C-S>', '<CMD>w<CR>')
 
 -- Buffer Movements
 map('n', '<leader>bp', '<CMD>bp<CR>')
@@ -56,7 +59,6 @@ map('x', '<A-k>', ":move '<-2<CR>gv=gv") --What's x? all?
 --Telescope
 map('n', '<leader>ff', '<CMD>Telescope find_files<cr>')
 map('n', '<leader>fg', '<CMD>Telescope live_grep<cr>')
-map('n', '<leader>fv', '<CMD>Telescope buffers<cr>')
+map('n', '<leader>fb', '<CMD>Telescope buffers<cr>')
 map('n', '<leader>fh', '<CMD>Telescope help_tags<cr>')
 map('n', '<leader>fd', '<CMD>Telescope diagnostics<cr>')
-
