@@ -1,23 +1,24 @@
 local function map(m, k, v)
   vim.keymap.set(m, k, v, { silent = true })
 end
-
 -- Quickly save the current buffer or all buffers
 --map('n', '<leader>w', '<CMD>update<CR>')
 --map('n', '<leader>W', '<CMD>wall<CR>')
-
 -- Quit neovim
 map('n', '<leader>qq', 'ZQ')
 map('n', '<leader>ww', 'ZZ')
+
+-- Tree
+map('n', '<leader>t', '<CMD>NvimTreeToggle<CR>')
 
 -- Save file like vscode
 map('n', '<C-S>', '<CMD>w<CR>')
 
 -- Buffer Movements
-map('n', '<leader>bp', '<CMD>bp<CR>')
-map('n', '<leader>bn', '<CMD>bn<CR>')
-map('n', '<leader>bd', '<CMD>bd!<CR>')
-map('n', "<leader>bl", '<CMD>b#<CR>')
+-- map('n', '<leader>bp', '<CMD>bp<CR>')
+-- map('n', '<leader>bn', '<CMD>bn<CR>')
+-- map('n', '<leader>bd', '<CMD>bd!<CR>')
+-- map('n', "<leader>bl", '<CMD>b#<CR>')
 
 -- New Splits
 map('n', '<leader>nv', '<CMD>vnew<CR>')
@@ -62,3 +63,11 @@ map('n', '<leader>fg', '<CMD>Telescope live_grep<cr>')
 map('n', '<leader>fb', '<CMD>Telescope buffers<cr>')
 map('n', '<leader>fh', '<CMD>Telescope help_tags<cr>')
 map('n', '<leader>fd', '<CMD>Telescope diagnostics<cr>')
+
+-- Some char autocomplete
+map('i', '(', '()<Esc>i')
+map('i', '{', '{}<Esc>i')
+map('i', '[', '[]<Esc>i')
+map('i', '"', '""<Esc>i')
+map('i', "'", "''<Esc>i")
+
