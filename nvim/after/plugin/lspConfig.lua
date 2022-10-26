@@ -25,9 +25,9 @@ local on_attach = function(client, bufnr)
   --vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
   --vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+  vim.keymap.set('n', '<space>f', vim.lsp.buf.format, bufopts)
   --vim.keymap.set('n', '<space>wl', function()
-    --print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+  --print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   --end, bufopts)
 end
 
@@ -35,7 +35,7 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-local servers = { "eslint","clangd", "pyright", "sumneko_lua", "marksman", "gopls","jsonls","tsserver"}
+local servers = { "emmet_ls", "eslint", "clangd", "pyright", "sumneko_lua", "marksman", "gopls", "jsonls", "tsserver" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
