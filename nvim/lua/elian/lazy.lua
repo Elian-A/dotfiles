@@ -140,6 +140,9 @@ require("lazy").setup({
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
     build = ':TSUpdate',
-  }
+  },
+
+  -- Nvim tmux navigation
+  { "alexghergh/nvim-tmux-navigation" },
 
 }, {})

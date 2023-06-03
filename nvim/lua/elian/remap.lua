@@ -25,4 +25,5 @@ vim.keymap.set('n', "<leader>pv", vim.cmd.Ex)
 vim.keymap.set('n', "<C-s>", vim.cmd.w)
 vim.keymap.set('i', "jj", "<Esc>")
 vim.keymap.set('n', "<leader>c", vim.cmd.close)
+vim.keymap.set('n', "<leader>f", vim.cmd.Format)
 
