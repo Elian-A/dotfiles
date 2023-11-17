@@ -295,6 +295,19 @@ vim.keymap.set('n', "<C-l>", vim.cmd.NvimTmuxNavigateRight)
 vim.keymap.set('n', "<C-\\>", vim.cmd.NvimTmuxNavigateLastActive)
 vim.keymap.set('n', "<C-Space>", vim.cmd.NvimTmuxNavigateNext)
 
+-- Splits
+vim.keymap.set('n', "<leader>vs", function()
+  vim.cmd.vs()
+  vim.cmd.NvimTmuxNavigateRight()
+end)
+vim.keymap.set('n', "<leader>hs", function()
+  vim.cmd.split()
+  vim.cmd.NvimTmuxNavigateDown()
+end)
+
+-- Autosave when scape
+vim.cmd.autocmd("InsertLeave * :w")
+
 -- Save like vs-code
 vim.keymap.set({ 'n', 'i' }, "<C-s>", function()
   vim.cmd.Format()
@@ -550,6 +563,9 @@ cmp.setup({
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
+
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
 
     ['<Tab>'] = cmp.mapping(function(fallback)
       if luasnip.expand_or_locally_jumpable() then
